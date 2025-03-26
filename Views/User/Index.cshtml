@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create", "User")
 </p>
+
+<!-- Search Bar -->
+<form method="get" asp-action="Index" class="d-flex justify-content-center mb-3">
+    <div class="input-group" style="width: 50%;">
+        <input type="text" name="searchString" class="form-control" placeholder="Search by Name" value="@ViewBag.SearchString" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
 <table class="table">
     <tr>
         <th>
@@ -20,7 +29,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -29,9 +39,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }
