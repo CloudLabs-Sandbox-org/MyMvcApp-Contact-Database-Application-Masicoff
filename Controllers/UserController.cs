@@ -18,7 +18,6 @@ public class UserController : Controller
 
             // Pasar el parámetro de búsqueda a la vista para mantener el valor en el campo de búsqueda
             ViewBag.SearchString = searchString;
-
             return View(filteredUsers);
         }
 
